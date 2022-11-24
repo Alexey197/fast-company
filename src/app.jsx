@@ -1,6 +1,6 @@
 import Users from './components/users'
 import React, {useState} from 'react'
-import api from './api'
+import api from './app/api'
 import SearchStatus from './components/searchStatus'
 import "bootstrap/dist/css/bootstrap.css"
 

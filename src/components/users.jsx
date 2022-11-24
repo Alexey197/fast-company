@@ -34,7 +34,6 @@ const Users = ({users, ...rest}) => {
           </tbody>
         </table>
       )}
-      
       <Pagination
         itemsCount={count}
         pageSize={pageSize}

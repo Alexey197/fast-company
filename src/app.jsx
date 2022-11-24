@@ -28,7 +28,7 @@ const App = () => {
       <SearchStatus length={users.length}/>
       <Users onDelete={handleDelete} onToggleBookMark={handleToggleBookMark} users={users}/>
     </div>
-)
+  )
 }
 
 export default App

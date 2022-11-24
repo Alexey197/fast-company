@@ -39,7 +39,7 @@ const User = ({
           </button>
         </td>
       </tr>
-    )
+  )
 }
 
 export default User

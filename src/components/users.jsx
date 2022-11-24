@@ -10,7 +10,7 @@ const Users = ({users, ...rest}) => {
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
   }
-  
+
   const userCrop = paginate(users, currentPage, pageSize)
   return (
     <>

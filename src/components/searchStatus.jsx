@@ -16,7 +16,7 @@ const SearchStatus = ({length}) => {
           (length > 0 ? "primary" : "danger")}
         >
           {length > 0 ?
-            length + renderPhrase(length) +  ' с тобой сегодня'
+            length + renderPhrase(length) + ' с тобой сегодня'
             : 'Никто не тусанет с тобой сегодня'}
         </span>
       </h2>

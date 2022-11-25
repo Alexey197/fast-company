@@ -1,7 +1,7 @@
-import Users from './components/users'
+import Users from './app/components/users'
 import React, {useState} from 'react'
 import api from './app/api'
-import SearchStatus from './components/searchStatus'
+import SearchStatus from './app/components/searchStatus'
 import "bootstrap/dist/css/bootstrap.css"
 
 const App = () => {

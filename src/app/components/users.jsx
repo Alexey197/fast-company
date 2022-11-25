@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import User from './user'
 import Pagination from './pagination'
-import {paginate} from '../app/utils/paginate'
+import {paginate} from '../utils/paginate'
+import PropTypes from 'prop-types'
 
 const Users = ({users, ...rest}) => {
   const count = users.length
@@ -42,6 +43,9 @@ const Users = ({users, ...rest}) => {
       />
     </>
   )
+}
+Users.propTypes = {
+  users: PropTypes.array
 }
 
 export default Users

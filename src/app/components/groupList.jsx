@@ -28,9 +28,9 @@ const GroupList = ({items, valueProperty, contentProperty, onItemSelect, selecte
           key={item[valueProperty]}
           className={
             "list-group-item" +
-            (item === selectedItem ? "active" : "")
+            (item === selectedItem ? " active" : "")
           }
-          onClick={() => onItemSelect(items[item])}
+          onClick={() => onItemSelect(item)}
           role='button'
         >
           {items[contentProperty]}
@@ -40,8 +40,8 @@ const GroupList = ({items, valueProperty, contentProperty, onItemSelect, selecte
   )
 }
 GroupList.defaultProps = {
-  valueProperty: '_id',
-  contentProperty: 'name'
+  valueProperty: "_id",
+  contentProperty: "name"
 }
 GroupList.propTypes = {
   items: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),

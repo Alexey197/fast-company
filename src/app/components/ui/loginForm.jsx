@@ -59,10 +59,6 @@ function LoginForm() {
   }
   
   return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-md-6 offset-md-3 shadow p-4">
-          <h3 className="mb-4">Login</h3>
           <form onSubmit={handlerSubmit}>
             <TextField
               label='Электронная почта'
@@ -85,9 +81,6 @@ function LoginForm() {
               className="btn btn-primary w-100 mx-auto">Submit
             </button>
           </form>
-        </div>
-      </div>
-    </div>
   )
 }
 

@@ -24,6 +24,7 @@ module.exports = {
     'eol-last': 'off',
     'operator-linebreak': 'off',
     'space-before-function-paren': 'off',
-    semi: 'off'
+    semi: 'off',
+    "multiline-ternary": "off"
   }
 }

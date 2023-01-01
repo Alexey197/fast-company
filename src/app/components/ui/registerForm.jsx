@@ -4,22 +4,28 @@ import TextField from '../common/form/textField'
 import api from '../../api'
 import SelectField from '../common/form/selectField'
 import RadioField from '../common/form/radioField'
+import MultiSelectField from '../common/form/multiSelectField'
+import CheckBoxField from '../common/form/checkBoxField'
 
 const RegisterForm = () => {
   const [data, setData] = useState({
     email: "",
     password: "",
     profession: "",
-    sex: "male"
+    sex: "male",
+    qualities: [],
+    licence: false
   })
+  const [qualities, setQualities] = useState({})
   const [professions, setProfessions] = useState([])
   const [errors, setErrors] = useState({})
   
   useEffect(() => {
     api.professions.fetchAll().then((data) => setProfessions(data))
+    api.qualities.fetchAll().then((data) => setQualities(data))
   }, [])
   
-  const handleChange = ({target}) => {
+  const handleChange = (target) => {
     setData(prevState => ({
       ...prevState,
       [target.name]: target.value
@@ -53,6 +59,11 @@ const RegisterForm = () => {
     profession: {
       isRequired: {
         message: "Обязательно выберете вашу профессию"
+      }
+    },
+    licence: {
+      isRequired: {
+        message: "Вы не можете использовать наш сервис без лицензионного соглашения"
       }
     }
   }
@@ -108,10 +119,25 @@ const RegisterForm = () => {
           {name: "Other", value: "other"}
         ]
       }
-      value={data.sex}
-      name="sex"
-      onChange={handleChange}
+        value={data.sex}
+        name="sex"
+        onChange={handleChange}
+        label="Выберите ваш пол "
       />
+      <MultiSelectField
+        options={qualities}
+        onChange={handleChange}
+        name="qualities"
+        label="Выберите ваши качества"
+      />
+      <CheckBoxField
+        value={data.licence}
+        onChange={handleChange}
+        name="licence"
+        error={errors.licence}
+      >
+        <a>Подтвердить лицензионное соглашение</a>
+      </CheckBoxField>
       <button
         type='submit'
         disabled={!isValid}

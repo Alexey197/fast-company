@@ -43,7 +43,7 @@ function LoginForm() {
       }
     }
   }
-  
+
   useEffect(() => {
     validate()
   }, [data])
